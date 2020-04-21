@@ -1,0 +1,14 @@
+---
+- name: Make user for EzyAdmin connection
+  hosts: all
+  tasks:
+    - name: "Copy script make user for authentication"
+      template: 
+        src: ezy_authentication.pl.j2
+        dest: '/ezy_authentication.pl'
+        owner: root
+        group: root
+        mode: 0700
+    - name: "Run script make user for authentication"
+      become: yes
+      command: "perl /ezy_authentication.pl"
