@@ -34,11 +34,11 @@
 
     - name: Run script make user for authentication
       become: true
-      shell: /usr/bin/perl /ezy_authentication.pl
+      command: /usr/bin/perl /ezy_authentication.pl
 
     - name: Read activate EzyAdmin data file
       become: true
-      command: /etc/ezyadmin_activate.data
+      command: cat /etc/ezyadmin_activate.data
       register: ezyadmin_activate
 
     - name: Display EzyAdmin activate data
