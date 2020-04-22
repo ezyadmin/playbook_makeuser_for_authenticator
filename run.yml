@@ -2,16 +2,16 @@
 - name: Make user for EzyAdmin connection
   hosts: all
   tasks:
-    - name: "Copy script make user for authentication"
+    - name: Copy script make user for authentication
       template: 
         src: ezy_authentication.pl.j2
-        dest: '/ezy_authentication.pl'
+        dest: /ezy_authentication.pl
         owner: root
         group: root
         mode: 0700
-    - name: "Run script make user for authentication"
+    - name: Run script make user for authentication
       become: yes
-      command: "perl /ezy_authentication.pl"
+      command: /ezy_authentication.pl
     - name: Read activate EzyAdmin data file
       command: /etc/ezyadmin_activate.data
       register: ezyadmin_activate

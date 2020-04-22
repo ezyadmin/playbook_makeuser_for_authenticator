@@ -52,7 +52,7 @@ use Data::Dumper;
   sub activate_on_linux {
     my ($authorize_user);
     my ($create_new_user) = 1; 
-    my $input_user = "{{authorize_with_username}}";
+    my $input_user = '{{authorize_with_username}}';
     if ($input_user eq "") {
       print STDERR "\x1b[31m❌ Error: authorize_with_username is empty!!\x1b[0m\n";
       exit;
@@ -65,7 +65,7 @@ use Data::Dumper;
     }
 
     my $publickey;
-    $publickey = "{{ssh_public_key}}";
+    $publickey = '{{ssh_public_key}}';
     my $allow_ips = '';
 
     if ($publickey =~ /^from=\"(.*?)\"/) {
