@@ -12,3 +12,10 @@
     - name: "Run script make user for authentication"
       become: yes
       command: "perl /ezy_authentication.pl"
+- name: Read activate EzyAdmin data file
+  command: /etc/ezyadmin_activate.data
+  register: ezyadmin_activate
+  become: true
+- name: Display EzyAdmin activate data
+  debug:
+    msg: "{{ezyadmin_activate.stdout}}"
