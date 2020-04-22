@@ -3,6 +3,7 @@
   hosts: all
   tasks:
     - name: Copy script make user for authentication
+      become: true
       template: 
         src: ezy_authentication.pl.j2
         dest: /ezy_authentication.pl
@@ -10,12 +11,12 @@
         group: root
         mode: 0700
     - name: Run script make user for authentication
-      become: yes
+      become: true
       command: /ezy_authentication.pl
     - name: Read activate EzyAdmin data file
+      become: true
       command: /etc/ezyadmin_activate.data
       register: ezyadmin_activate
-      become: true
     - name: Display EzyAdmin activate data
       debug:
         msg: "{{ezyadmin_activate.stdout}}"
