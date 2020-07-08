@@ -17,7 +17,7 @@ EOF
 print "\x1b[36m\x1b[5m" . $signature . "\x1b[0m\n";
 
 if ($> != 0) {
-    print STDERR "\x1b[31m❌ Error: You must run this script by root permission, otherwise, you will not have privilege to properly install.\x1b[0m\n";
+    print STDERR "\x1b[31mError: You must run this script by root permission, otherwise, you will not have privilege to properly install.\x1b[0m\n";
     exit;
 }
 
@@ -54,7 +54,7 @@ use Data::Dumper;
     my ($create_new_user) = 1; 
     my $input_user = '{{authorize_with_username}}';
     if ($input_user eq "") {
-      print STDERR "\x1b[31m❌ Error: authorize_with_username is empty!!\x1b[0m\n";
+      print STDERR "\x1b[31mError: authorize_with_username is empty!!\x1b[0m\n";
       exit;
     }
     if (getpwnam($input_user)) {
