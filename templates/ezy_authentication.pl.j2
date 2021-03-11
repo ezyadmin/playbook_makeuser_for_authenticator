@@ -38,7 +38,6 @@ package EzyAdminActivateAuth;
 use strict;
 use warnings;
 use Fcntl ':mode';
-use Data::Dumper;
 {
   sub init {
     if ($^O eq 'MSWin32') {
@@ -221,7 +220,6 @@ package EzyAdminDeactivateAuth;
 use strict;
 use warnings;
 use vars qw ($INSTANCE);
-use Data::Dumper;
 {
   sub init {
     print "\x1b[33m❗\x1b[0m Under construction\n"; exit;
@@ -232,7 +230,6 @@ use Data::Dumper;
 package EzyAdminSystem;
 use strict;
 use warnings;
-use Data::Dumper;
 {
   sub prompt {
     my $promptLable = shift;
@@ -393,7 +390,6 @@ package EzyAdminFiles;
 use strict;
 use warnings;
 use Fcntl qw(:flock SEEK_END);
-use Data::Dumper;
 {
   sub get_contents {
     my $filename = shift;
